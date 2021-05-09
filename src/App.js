@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Nav from "./components/Nav"
 
 function App() {
+  const navLink =['Home','About','Contact']
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>App</h1> */}
+      <Nav links= {navLink.map(link=>{
+    return(
+    <li key={link}><a href="#">{link}</a></li>
+      )
+        })} />
+
+       <Hero /> 
+
+       <Footer name="© 2021 LOGO Digital. All rights reserved Powered by: LOGO"/>
+      
     </div>
   );
 }
